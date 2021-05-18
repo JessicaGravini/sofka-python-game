@@ -1,5 +1,4 @@
 import pymysql
-import mysql.connector
 
 class DataBase:
     def __init__(self):
