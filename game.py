@@ -12,6 +12,9 @@ class Game:
         self.carriles = []
         pass
 
+    def obtenerNombreJuego(self):
+        return self.nombre
+
     def addCarToGame(self, car):
         self.cars.append(car)
 

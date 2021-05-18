@@ -2,6 +2,7 @@ from podio import Podio
 from jugador import Player
 from car import Car
 from game import Game
+from bd import DataBase
 
 nroJugadores = 0
 lstJugadores = list()
@@ -63,6 +64,11 @@ def calcularPodios(game, pista):
     primerLugar = podio.obtenerPrimerLugar()
     segundoLugar = podio.obtenerSegundoLugar()
     tercerLugar = podio.obtenerTercerLugar()
+
+    database = DataBase()
+    database.insertarPodio(game.obtenerNombreJuego(), primerLugar.nombre, 1)
+    database.insertarPodio(game.obtenerNombreJuego(), segundoLugar.nombre, 2)
+    database.insertarPodio(game.obtenerNombreJuego(), tercerLugar.nombre, 3)
 
     print("******** Podio **********")
     print(f"El ganador del primer lugar es {primerLugar.nombre}")

@@ -1,4 +1,3 @@
-from app import solicitarNombreJugadores, solicitarNroJugadores
 import pymysql
 import mysql.connector
 
@@ -11,22 +10,8 @@ class DataBase:
             db='game'
         )
 
+    def insertarPodio(self, nombreJuego, jugador, puesto):
         self.cursor = self.connection.cursor()
-    
-        sql = "INSERT INTO game ("", VALUES (%s, %s)"
-    
+        sql = f"INSERT INTO podio VALUES (0, '{nombreJuego}', '{puesto}', '{jugador}')"
         self.cursor.execute(sql)
-
-
-database = DataBase()
-
-
-
-
-
-    
-
-
-
-
-
+        self.connection.commit()
